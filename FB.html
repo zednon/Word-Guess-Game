@@ -14,7 +14,11 @@
       <h3>Hint: </h3>
 <div id = "hint">
 
+
 </div>
+
+<br>
+<br>
     <div class="LC" id="chosen-word-string-underscore">
     </div>
     <img id="image">
@@ -48,7 +52,7 @@ console.log(chosenWord);
 console.log(chosenWordArray);
 console.log(chosenWordArrayUnderscore);
 
-document.getElementById('hint').innerHTML = ranDis
+
 var chosenWordStringUnderscore = chosenWordArrayUnderscore.join('')
 document.getElementById('chosen-word-string-underscore').innerHTML = chosenWordStringUnderscore
 
@@ -71,7 +75,7 @@ document.addEventListener('keypress', function(event){
       }
     }
   }
-
+  
   // key in word evalutates to false run this
   if(!chosenWordArray.includes(key)){
       console.log('is not word');
@@ -97,6 +101,7 @@ document.addEventListener('keypress', function(event){
         console.log('happened');
         document.getElementById('image').setAttribute('src', images[4])
         document.getElementById('image').setAttribute('alt', 'left leg add to the right leg, body, and head')
+        document.getElementById('hint').innerHTML = ranDis
       } else if (guessesLeft == 2){
         console.log('happened');
         document.getElementById('image').setAttribute('src', images[6])
