@@ -27,12 +27,12 @@ var guessesLeft = 8;
 var images = ['start.png' , 'head.png', 'body.png' , 'left leg.png' , 'right leg.png' , 'arm right.png', 'arm left.png' , 'surpise jonny deep.jpg' ];
 
 
-var chosenWord = ["Demiguise" , "Dragon" , "Niffler" , "Snidget" , "Centaur" , "Acromantula" , "Basilisk" , "Erumpent" , "Griffin" , "Jackalope"]
+var chosenWord = ["demiguise" , "dragon" , "niffler" , "snidget" , "centaur" , "acromantula" , "basilisk" , "erumpent" , "griffin" , "jackalope"]
 var ranNum = Math.floor(Math.random() * chosenWord.length)
  var chosenWordArray = chosenWord[ranNum]
 var chosenWordArrayUnderscore = []
 
-for (var i = -1; i < chosenWordArray.length; i++) {
+for (var i = 0; i < chosenWordArray.length; i++) {
   chosenWordArrayUnderscore.push('_ ')
 }
 
@@ -54,7 +54,7 @@ document.addEventListener('keypress', function(event){
 
 
   // key in word evalutates to true run this
-  if(chosenWordArray.indexOf(key)){
+  if(chosenWordArray.indexOf(key) > -1){
     // this for loop will replace the _ in the underscoreArray with the correct letter
     for (var i = 0; i < chosenWordArray.length; i++) {
       if(key === chosenWordArray[i]){
