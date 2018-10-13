@@ -11,8 +11,15 @@
       
           <p>Studing for the O.W.L.S. over the summer with you're Muggle family can be hard please play this game to test you're knowlelege of Newt Scamters Fanstic Beasts and Where to Find them? You'll be given questions and you'll have to figure out the curected spelling for the worlds. 8 wrong guess and you'll hang Grenweralt.  </p>
       </header>
+      <h3>Hint: </h3>
+<div id = "hint">
 
-    <div id="chosen-word-string-underscore">
+
+</div>
+
+<br>
+<br>
+    <div class="LC" id="chosen-word-string-underscore">
     </div>
     <img id="image">
    
@@ -25,14 +32,17 @@
 var guessesLeft = 8;
 
 var images = ['start.png' , 'head.png', 'body.png' , 'left leg.png' , 'right leg.png' , 'arm right.png', 'arm left.png' , 'surpise jonny deep.jpg' ];
+var discription = ["can be hard to see" , "is illege to own" , "steals ones shiny objects" , "wrock band" , "has there own magic" , "rumored to be exentic" , "spiters flee" , "Large cretures" , "Part bird part loin" , "westen US wild life"]
 
-
-var chosenWord = ["Demiguise" , "Dragon" , "Niffler" , "Snidget" , "Centaur" , "Acromantula" , "Basilisk" , "Erumpent" , "Griffin" , "Jackalope"]
+var chosenWord = ["demiguise" , "dragon" , "niffler" , "snidget" , "centaur" , "acromantula" , "basilisk" , "erumpent" , "griffin" , "jackalope"]
 var ranNum = Math.floor(Math.random() * chosenWord.length)
+var ranDis = discription[ranNum]
+
  var chosenWordArray = chosenWord[ranNum]
+ 
 var chosenWordArrayUnderscore = []
 
-for (var i = -1; i < chosenWordArray.length; i++) {
+for (var i = 0; i < chosenWordArray.length; i++) {
   chosenWordArrayUnderscore.push('_ ')
 }
 
@@ -41,6 +51,7 @@ for (var i = -1; i < chosenWordArray.length; i++) {
 console.log(chosenWord);
 console.log(chosenWordArray);
 console.log(chosenWordArrayUnderscore);
+
 
 var chosenWordStringUnderscore = chosenWordArrayUnderscore.join('')
 document.getElementById('chosen-word-string-underscore').innerHTML = chosenWordStringUnderscore
@@ -54,7 +65,7 @@ document.addEventListener('keypress', function(event){
 
 
   // key in word evalutates to true run this
-  if(chosenWordArray.indexOf(key)){
+  if(chosenWordArray.indexOf(key) > -1){
     // this for loop will replace the _ in the underscoreArray with the correct letter
     for (var i = 0; i < chosenWordArray.length; i++) {
       if(key === chosenWordArray[i]){
@@ -64,7 +75,7 @@ document.addEventListener('keypress', function(event){
       }
     }
   }
-
+  
   // key in word evalutates to false run this
   if(!chosenWordArray.includes(key)){
       console.log('is not word');
@@ -90,13 +101,14 @@ document.addEventListener('keypress', function(event){
         console.log('happened');
         document.getElementById('image').setAttribute('src', images[4])
         document.getElementById('image').setAttribute('alt', 'left leg add to the right leg, body, and head')
+        document.getElementById('hint').innerHTML = ranDis
       } else if (guessesLeft == 2){
         console.log('happened');
-        document.getElementById('image').setAttribute('src', images[5])
+        document.getElementById('image').setAttribute('src', images[6])
         document.getElementById('image').setAttribute('alt', 'Right arm add to the both legs, body, and head')
       } else if (guessesLeft == 1){
         console.log('happened');
-        document.getElementById('image').setAttribute('src', images[6])
+        document.getElementById('image').setAttribute('src', images[5])
         document.getElementById('image').setAttribute('alt', 'Left arm add to the right arm, both legs, body, and head')
       }  else if (guessesLeft == 0){
         console.log('happened');
