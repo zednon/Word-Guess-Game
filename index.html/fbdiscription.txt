@@ -11,10 +11,7 @@
       
           <p>Studing for the O.W.L.S. over the summer with you're Muggle family can be hard please play this game to test you're knowlelege of Newt Scamters Fanstic Beasts and Where to Find them? You'll be given questions and you'll have to figure out the curected spelling for the worlds. 8 wrong guess and you'll hang Grenweralt.  </p>
       </header>
-      <h3>Hint: </h3>
-<div id = "hint">
 
-</div>
     <div class="LC" id="chosen-word-string-underscore">
     </div>
     <img id="image">
@@ -28,12 +25,10 @@
 var guessesLeft = 8;
 
 var images = ['start.png' , 'head.png', 'body.png' , 'left leg.png' , 'right leg.png' , 'arm right.png', 'arm left.png' , 'surpise jonny deep.jpg' ];
-var discription = ["can be hard to see" , "is illege to own" , "steals ones shiny objects" , "wrock band" , "has there own magic" , "rumored to be exentic" , "spiters flee" , "Large cretures" , "Part bird part loin" , "westen US wild life"]
+
 
 var chosenWord = ["demiguise" , "dragon" , "niffler" , "snidget" , "centaur" , "acromantula" , "basilisk" , "erumpent" , "griffin" , "jackalope"]
 var ranNum = Math.floor(Math.random() * chosenWord.length)
-var ranDis = discription[ranNum]
-
  var chosenWordArray = chosenWord[ranNum]
  
 var chosenWordArrayUnderscore = []
@@ -48,7 +43,6 @@ console.log(chosenWord);
 console.log(chosenWordArray);
 console.log(chosenWordArrayUnderscore);
 
-document.getElementById('hint').innerHTML = ranDis
 var chosenWordStringUnderscore = chosenWordArrayUnderscore.join('')
 document.getElementById('chosen-word-string-underscore').innerHTML = chosenWordStringUnderscore
 
