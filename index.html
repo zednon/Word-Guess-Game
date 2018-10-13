@@ -9,7 +9,7 @@
       <header>
           <h1>Wellcome to The Fanstic Beast's Newt Review Game</h1>
       
-          <p>Studing for the O.W.L.S. over the summer with you're Muggle family can be hard please play this game to test you're knowlelege of Newt Scamters Fanstic Beasts and Where to Find them? You'll be given questions and you'll have to figure out the curected spelling for the worlds. 8 wrong guess and you'll hang Grenweralt.  </p>
+          <p>Studying for the O.W.L.S. over the summer when you're with your Muggle family can be hard. Please play this game you'll be given hints as you go to help figure out the Beasts. 8 wrong guess and you'll hang Grenweralt.  </p>
       </header>
       <h3>Hint: </h3>
 <div id = "hint">
@@ -32,11 +32,11 @@
 var guessesLeft = 8;
 
 var images = ['start.png' , 'head.png', 'body.png' , 'left leg.png' , 'right leg.png' , 'arm right.png', 'arm left.png' , 'surpise jonny deep.jpg' ];
-var discription = ["can be hard to see" , "is illege to own" , "steals ones shiny objects" , "wrock band" , "has there own magic" , "rumored to be exentic" , "spiters flee" , "Large cretures" , "Part bird part loin" , "westen US wild life"]
-
-var chosenWord = ["demiguise" , "dragon" , "niffler" , "snidget" , "centaur" , "acromantula" , "basilisk" , "erumpent" , "griffin" , "jackalope"]
+var discription = ["Peaceful, ape-like herbivores with the ability to turn invisible when threatened" , "Giant, winged, fire-breathing creatures" , "Long-snouted, burrowing creatures native to Britain with a penchant for anything shiny" , "A small, agile bird that was replaced by the Golden Snitch in Quidditch matches" , "Forest-dwellers who have the torso of a human but the body of a horse, and who are gifted in Divination" , "Untrainable, man-eating and highly dangerous" ,   "instantly kill anyone who looks into their eyes" , "dangerous beast whose horn has explosive properties"]
+var chosenWord = ["demiguise" , "dragon" , "niffler" , "snidget" , "centaur" , "acromantula" , "basilisk" , "erumpent" ,]
 var ranNum = Math.floor(Math.random() * chosenWord.length)
 var ranDis = discription[ranNum]
+
 
  var chosenWordArray = chosenWord[ranNum]
  
@@ -85,6 +85,7 @@ document.addEventListener('keypress', function(event){
         console.log('happened');
         document.getElementById('image').setAttribute('src', images[0])
         document.getElementById('image').setAttribute('alt', 'Gallows')
+        
       } else if (guessesLeft == 6){
         console.log('happened');
         document.getElementById('image').setAttribute('src', images[1])
@@ -93,6 +94,7 @@ document.addEventListener('keypress', function(event){
         console.log('happened');
         document.getElementById('image').setAttribute('src', images[2])
         document.getElementById('image').setAttribute('alt', 'Body added to the head')
+        // document.getElementById('hint').innerHTML = ranDis2
       } else if (guessesLeft == 4){
         console.log('happened');
         document.getElementById('image').setAttribute('src', images[3])
@@ -106,10 +108,12 @@ document.addEventListener('keypress', function(event){
         console.log('happened');
         document.getElementById('image').setAttribute('src', images[6])
         document.getElementById('image').setAttribute('alt', 'Right arm add to the both legs, body, and head')
+        // document.getElementById('hint').innerHTML = ranMag
       } else if (guessesLeft == 1){
         console.log('happened');
         document.getElementById('image').setAttribute('src', images[5])
         document.getElementById('image').setAttribute('alt', 'Left arm add to the right arm, both legs, body, and head')
+        // document.getElementById('hint').innerHTML = ranMag
       }  else if (guessesLeft == 0){
         console.log('happened');
         document.getElementById('image').setAttribute('src', images[7])
