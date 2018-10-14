@@ -20,7 +20,11 @@
 <br>
 <br>
     <div class="LC" id="chosen-word-string-underscore">
+      
     </div>
+    <div class="TheEnd" id="gameOver"></div>
+   <div class="TheEnd"id="TheEnd"></div>
+
     <img id="image">
    
 
@@ -30,10 +34,10 @@
 <script>
 
 var guessesLeft = 8;
-
-var images = ['start.png' , 'head.png', 'body.png' , 'left leg.png' , 'right leg.png' , 'arm right.png', 'arm left.png' , 'surpise jonny deep.jpg' ];
-var discription = ["Peaceful, ape-like herbivores with the ability to turn invisible when threatened" , "Giant, winged, fire-breathing creatures" , "Long-snouted, burrowing creatures native to Britain with a penchant for anything shiny" , "A small, agile bird that was replaced by the Golden Snitch in Quidditch matches" , "Forest-dwellers who have the torso of a human but the body of a horse, and who are gifted in Divination" , "Untrainable, man-eating and highly dangerous" ,   "instantly kill anyone who looks into their eyes" , "dangerous beast whose horn has explosive properties"]
-var chosenWord = ["demiguise" , "dragon" , "niffler" , "snidget" , "centaur" , "acromantula" , "basilisk" , "erumpent" ,]
+var gameover = "Game Over: "
+var images = ['start.png' , 'head.png', 'body.png' , 'left leg.png' , 'right leg.png' , 'arm right.png', 'arm left.png' , 'surpise jonny deep.jpg'  ];
+var discription = ["Peaceful, ape-like herbivores with the ability to turn invisible when threatened" , "Giant, winged, fire-breathing creatures" , "Long-snouted, burrowing creatures native to Britain with a penchant for anything shiny" , "A small, agile bird that was replaced by the Golden Snitch in Quidditch matches" , "Forest-dwellers who have the torso of a human but the body of a horse, and who are gifted in Divination" , "Untrainable, man-eating and highly dangerous" ,   "instantly kill anyone who looks into their eyes" , "dangerous beast whose horn has explosive properties" , 'Peaceful and shy, unless its tree habitat is threatened.' , ' Standing up to 15 feet tall, it is a snowy-white furred humanoid that may be related to the troll.']
+var chosenWord = ["demiguise" , "dragon" , "niffler" , "snidget" , "centaur" , "acromantula" , "basilisk" , "erumpent" , "bowtruckle" , "yeti"]
 var ranNum = Math.floor(Math.random() * chosenWord.length)
 var ranDis = discription[ranNum]
 
@@ -118,10 +122,14 @@ document.addEventListener('keypress', function(event){
         console.log('happened');
         document.getElementById('image').setAttribute('src', images[7])
         document.getElementById('image').setAttribute('alt', 'Surpise Jonny!')
+        document.getElementById('gameOver').innerHTML = gameover
+        document.getElementById('TheEnd').innerHTML = chosenWordArray
+
       }
 
     }
   })
+
 
 
 
