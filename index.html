@@ -45,29 +45,18 @@ var ranDis = discription[ranNum]
  var chosenWordArray = chosenWord[ranNum]
  
 var chosenWordArrayUnderscore = []
-
+var chosenWordArrayUnderscore = []
 for (var i = 0; i < chosenWordArray.length; i++) {
   chosenWordArrayUnderscore.push('_ ')
 }
-
-
-
 console.log(chosenWord);
 console.log(chosenWordArray);
 console.log(chosenWordArrayUnderscore);
-
-
 var chosenWordStringUnderscore = chosenWordArrayUnderscore.join('')
 document.getElementById('chosen-word-string-underscore').innerHTML = chosenWordStringUnderscore
-
-
-
-
 document.addEventListener('keypress', function(event){
   var key = event.key
   console.log(key);
-
-
   // key in word evalutates to true run this
   if(chosenWordArray.indexOf(key) > -1){
     // this for loop will replace the _ in the underscoreArray with the correct letter
@@ -119,7 +108,6 @@ document.addEventListener('keypress', function(event){
         document.getElementById('image').setAttribute('alt', 'Left arm add to the right arm, both legs, body, and head')
         // document.getElementById('hint').innerHTML = ranMag
       }  else if (guessesLeft == 0){
-        console.log('happened');
         document.getElementById('image').setAttribute('src', images[7])
         document.getElementById('image').setAttribute('alt', 'Surpise Jonny!')
         document.getElementById('gameOver').innerHTML = gameover
